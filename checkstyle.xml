@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+
+    <!-- Encabezado obligatorio -->
+    <module name="Header">
+        <property name="header" value="// Copyright (C) 2025"/>
+    </module>
+
+    <!-- Archivo de supresiones -->
+    <module name="SuppressionFilter">
+        <property name="file" value="suppressions.xml"/>
+    </module>
+
+    <!-- Reglas que NO van dentro de TreeWalker -->
+    <!-- Longitud máxima de línea -->
+    <module name="LineLength">
+        <property name="max" value="80"/>
+    </module>
+
+    <!-- Validaciones de código relacionadas con la sintaxis -->
+    <module name="TreeWalker">
+
+        <!-- Todos los métodos deben tener Javadoc -->
+        <module name="JavadocMethod"/>
+
+        <!-- Los nombres de métodos deben empezar en minúscula -->
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+        </module>
+
+        <!-- Los nombres de variables locales deben empezar en minúscula -->
+        <module name="LocalVariableName"/>
+
+        <!-- Debe haber un espacio después de comas y punto y coma -->
+        <module name="WhitespaceAfter">
+            <property name="tokens" value="COMMA, SEMI"/>
+        </module>
+
+    </module>
+</module>
